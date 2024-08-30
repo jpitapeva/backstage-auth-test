@@ -63,10 +63,19 @@ techdocs:
     type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
 
 auth:
-  # see https://backstage.io/docs/auth/ to learn about auth providers
   providers:
-    # See https://backstage.io/docs/auth/guest/provider
-    guest: {}
+    microsoft:
+      development:
+        clientId: "682ddb0f-9f6a-4ffc-b742-98fa11342dfc"
+        clientSecret: "qcC8Q~2OA7QPTBky55gNOcBNe5.S1k8YVsaQaa.X"
+        tenantId: "00e72b0b-332e-4900-87a8-dc5826cbf544"
+        domainHint: "00e72b0b-332e-4900-87a8-dc5826cbf544"
+        signIn:
+          resolvers:
+            # typically you would pick one of these
+            - resolver: emailMatchingUserEntityProfileEmail
+            - resolver: emailLocalPartMatchingUserEntityName
+            - resolver: emailMatchingUserEntityAnnotation
 
 scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
@@ -93,6 +102,22 @@ catalog:
       target: ../../examples/org.yaml
       rules:
         - allow: [User, Group]
+  # providers:
+  #   microsoftGraphOrg:
+  #     default:
+  #       clientId: "682ddb0f-9f6a-4ffc-b742-98fa11342dfc"
+  #       tenantId: "00e72b0b-332e-4900-87a8-dc5826cbf544"
+  #       clientSecret: "qcC8Q~2OA7QPTBky55gNOcBNe5.S1k8YVsaQaa.X"
+  #       user:
+  #         filter: accountEnabled eq true and userType eq 'member'
+  #       group:
+  #         filter: >
+  #           securityEnabled eq false
+  #           and mailEnabled eq true
+  #           and groupTypes/any(c:c+eq+'Unified')
+  #       schedule:
+  #         frequency: PT1H
+  #         timeout: PT50M
 
     ## Uncomment these lines to add more example data
     # - type: url

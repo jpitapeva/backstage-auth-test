@@ -50,5 +50,6 @@ backend.add(import('@backstage/plugin-search-backend-module-techdocs/alpha'));
 
 // kubernetes
 backend.add(import('@backstage/plugin-kubernetes-backend/alpha'));
-
+backend.add(import('@backstage/plugin-auth-backend-module-microsoft-provider'));
+backend.add(import('@backstage/plugin-catalog-backend-module-msgraph/alpha'));
 backend.start();
