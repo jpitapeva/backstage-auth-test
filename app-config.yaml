@@ -66,10 +66,10 @@ auth:
   providers:
     microsoft:
       development:
-        clientId: "682ddb0f-9f6a-4ffc-b742-98fa11342dfc"
-        clientSecret: "qcC8Q~2OA7QPTBky55gNOcBNe5.S1k8YVsaQaa.X"
-        tenantId: "00e72b0b-332e-4900-87a8-dc5826cbf544"
-        domainHint: "00e72b0b-332e-4900-87a8-dc5826cbf544"
+        clientId: "REMOVED"
+        clientSecret: "REMOVED"
+        tenantId: "REMOVED"
+        domainHint: "REMOVED"
         signIn:
           resolvers:
             # typically you would pick one of these
